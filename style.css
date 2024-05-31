@@ -7,6 +7,115 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.box {
+  width: clamp(100px, 50%, 200px);
+  height: 200px;
+  background-color: royalblue;
+}
+
+.top, 
+.bottom {
+  height: 100vh;
+}
+
+.container-snap {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.container-snap .card {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center;
+}
+
+.container-snap .card:nth-child(1) {
+  background-color: lightsalmon;
+}
+
+.container-snap .card:nth-child(2) {
+  background-color: lightgreen;
+}
+
+.container-snap .card:nth-child(3) {
+  background-color: lightblue;
+}
+
+.container-snap .card:nth-child(4) {
+  background-color: lightcoral;
+}
+
+.container-inset {
+  position: relative;
+  background-color: wheat;
+  width: 200px;
+  height: 200px;
+}
+
+.container-inset .box {
+  position: absolute;
+  background-color: lightcoral;
+  /* rigth: 20px */
+  /* bottom: 20px */
+  /* left: 20px */
+  /* top: 20px */
+  inset: 20px;
+}
+
+.container-box {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.container-box .item {
+  width: 40px;
+  height: 40px;
+  background-color: lightcoral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* margin-block */
+  /* margin-inline */
+  padding-inline: 8px;
+  padding-block: 16px; 
+}
+
+.container-box .item:nth-child(1) { order: 1; }
+.container-box .item:nth-child(2) { order: 3; }
+.container-box .item:nth-child(3) { order: 2; }
+.container-box .item:nth-child(4) { order: 4; }
+
+.container-max {
+  /* width: 70% */
+  /* min/max-width: 500px */
+  width: max(70%, 500px);
+}
+
+.text-container {
+  font-size: 24px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.div-has:has(p) { background-color: lightcoral; }
+.container:has(.div-has) { background-color: lightblue; }
+
+.container-is :is(h2, .text, bottom) {
+  color: seagreen;
+}
+
 .container{
   width: 500px;
   height: 500px;
